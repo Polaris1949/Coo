@@ -1,10 +1,10 @@
 #include "version.h"
 
-namespace coo
+namespace dove
 {
 
 const char*
 version() noexcept
-{ return LIBCOO_VERSION; }
+{ return LIBDOVE_VERSION; }
 
 }

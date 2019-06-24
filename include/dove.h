@@ -1,11 +1,12 @@
-#ifndef _COO_DOVE_H
-#define _COO_DOVE_H 1
+#ifndef _DOVE_DOVE_H
+#define _DOVE_DOVE_H 1
 
-namespace coo
+namespace dove
 {
 
-void unimplement();
+const char* unimplement() noexcept;
+const char* coo() noexcept;
 
 }
 
-#endif /* _COO_DOVE_H */
+#endif /* _DOVE_DOVE_H */

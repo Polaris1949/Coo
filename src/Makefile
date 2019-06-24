@@ -1,23 +1,26 @@
-object = dove.o version.o
-rootdir = /cygdrive/d/develop/coo
-bindir = $(rootdir)/bin
+object = dove.o log.o version.o
+rootdir = /cygdrive/d/develop/dove
 incdir = $(rootdir)/include
 incdepdir = /cygdrive/d/develop
 libdir = $(rootdir)/lib
-libsubdir = $(rootdir)/coo
-libname = coo
+libsubdir = $(rootdir)/dove
+libname = dove
 vermajor = 0
 libsta = lib$(libname).a
 libimp = lib$(libname).dll.a
 libdyn = cyg$(libname)-$(vermajor).dll
 
+destdir = /usr/local
+destbindir = $(destdir)/bin
+destlibdir = $(destdir)/lib
+
 CXX = g++
 CXXINC = -I$(incdepdir) -I$(incdir)
-CXXFLAGS = -std=gnu++2a -O2 -g3 $(CXXINC)
+CXXFLAGS = -std=gnu++2a -Wall -Wextra -O2 -g3 $(CXXINC)
 
-all: lib install
+all: lib
 
-re: clean all
+redo: clean all
 
 lib: $(object)
 	$(AR) cru $(libsta) $(object)
@@ -28,9 +31,10 @@ $(object): %.o: %.cc
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 install:
-	mkdir -p $(bindir) $(libdir)
-	cp $(libsta) $(libimp) $(libdir)
-	cp $(libdyn) $(bindir)
+	mkdir -p $(destbindir) $(destlibdir)
+	cp $(libsta) $(libimp) $(destlibdir)
+	cp $(libdyn) $(destbindir)
 
 clean:
-	rm -f *.o *.a *.dll
+	rm -f $(object)
+	rm -f $(libsta) $(libimp) $(libdyn)

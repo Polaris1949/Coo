@@ -1,4 +1,4 @@
-# Coo Library (libcoo)
+# Dove Library
 
 This library provides a fast and easy interface for bugs and unimplemented features.
 

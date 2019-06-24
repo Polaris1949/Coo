@@ -1,13 +1,13 @@
-#ifndef _COO_VERSION_H
-#define _COO_VERSION_H 1
+#ifndef _DOVE_VERSION_H
+#define _DOVE_VERSION_H 1
 
-namespace coo
+namespace dove
 {
 
-#define LIBCOO_VERSION "0.1"
+#define LIBDOVE_VERSION "0.1"
 
 const char* version() noexcept;
 
 }
 
-#endif /* _COO_VERSION_H */
+#endif /* _DOVE_VERSION_H */
