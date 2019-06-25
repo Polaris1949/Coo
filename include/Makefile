@@ -1,5 +1,5 @@
 header = dove.h log.h version.h
-libheader = libcoo.h
+libheader = libdove.h
 rootdir = /cygdrive/d/develop/coo
 bindir = $(rootdir)/bin
 incdir = $(rootdir)/include
